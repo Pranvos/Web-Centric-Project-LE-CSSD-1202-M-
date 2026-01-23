@@ -6,6 +6,95 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <header>
+        <h1>Contact Us</h1>
+        <p>Please fill out the form below and we’ll get back to you.</p>
+        <hr>
+    </header>
+
+    <nav>
+    <ul>
+        <li>
+            <a href="index.html">
+                Home
+            </a>
+        </li>
+        <li>
+            <a href="about.html">
+                <img src="images/about us.png" alt="About us icon" height="30">
+                About Us
+            </a>
+        </li>
+        <li>
+            <a href="login.html">
+                <img src="images/profileIcon.png" alt="Profile icon" height="30">
+                Login
+            </a>
+        </li>
+        <li>
+            <a href="cart.html">
+                <img src="images/cart.png" alt="Cart icon" height="30">
+                Your Cart
+            </a>
+        </li>
+    </ul>
+    <hr>
+</nav>
+
+    <main>
+        <form action = "#" method = "post">
+            <fieldset>
+                <legend>Personal Information</legend>
+                
+                <label for = "name">Full Name</label><br>
+                <input type = "text" id = "name" name = "name" placeholder="Full name" required><br><br>
+
+                <label for = "email">Email Address</label><br>
+                <input type = "email" id = "email" name = "email" placeholder="xyz@domain.com" required><br><br>
+
+
+                <label for = "phone">Phone Number</label><br>
+                <input type = "tel" id = "phone" name = "phone" placeholder="1234567890" required><br><br>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>Inquiery Details</legend>
+                
+                <label for = "topic">Reason for Contact </label><br>
+                <select id = "topic" name = "topic">
+                    <option value = "">-- Select an option --</option>
+                    <option value = "support">Customer Support</option>
+                    <option value = "feedback">Feedback</option>
+                    <option value = "business">Business Inquiry</option>
+                    <option value = "other">Other</option>
+                </select><br><br>
+
+                <label>Preferred Contact Method</label><br>
+                <input type = "radio" id= "contact-email" name = "contact_method" value = "email">
+                <label for="contact-email">Email</label><br>
+
+                <input type = "radio" id= "contact-phone" name = "contact_method" value = "phone">
+                <label for="contact-email">Phone</label><br>
+
+                <label for = "message">Message</label><br>
+                <textarea id = "message" name = "message" row="100" cols="50"></textarea>
+            </fieldset>
+
+            <fieldset>
+                <legend>Additional Information</legend>
+
+                <label for = "attachment">Attach a file(optional)</label><br>
+                <input type = "file" id = "attachment" name = "attachment"><br><br>
+
+                <input type = "checkbox" id="consent" name = "consent" required>
+                <label for = "consent">I agree to be contacted regarding my inquiery</label><br><br>
+            </fieldset>
+
+            <button type = "submit">Submit</button>
+            <button type = "reset">Clear</button>
+
+        </form>
+    </main>
 </body>
 </html>
