@@ -1,11 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PTKM | Login</title>
+  <meta name="description" content="Login to PTKM to access your account and track your progress." />
 </head>
+
 <body>
-    
+  <header>
+    <a href="index.html" aria-label="Go to Home">
+      <h1>PTKM</h1>
+    </a>
+    <p>Login to continue your journey.</p>
+
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="games.html">Games (Shop)</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="checkout.html">Checkout</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html" aria-current="page">Login</a></li>
+        <li><a href="register.html">Register</a></li>
+      </ul>
+    </nav>
+    <hr />
+  </header>
+
+  <main id="main-content">
+    <section aria-labelledby="login-title">
+      <h2 id="login-title">Login</h2>
+      <p>Use your email and password to sign in. (Phase 1: form is not processed.)</p>
+
+      <form action="#" method="post">
+        <fieldset>
+          <legend>Account details</legend>
+
+          <p>
+            <label for="email">Email</label><br />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              autocomplete="email"
+              required
+              placeholder="name@example.com"
+            />
+          </p>
+
+          <p>
+            <label for="password">Password</label><br />
+            <input
+              type="password"
+              id="password"
+              name="password"
+              autocomplete="current-password"
+              required
+              minlength="6"
+              placeholder="At least 6 characters"
+            />
+          </p>
+
+          <p>
+            <label>
+              <input type="checkbox" name="remember" />
+              Remember me
+            </label>
+          </p>
+
+          <p>
+            <button type="submit">Sign in</button>
+            <button type="reset">Clear</button>
+          </p>
+        </fieldset>
+      </form>
+
+      <aside>
+        <h3>New here?</h3>
+        <p>
+          Create an account on the <a href="register.html">Register</a> page.
+        </p>
+      </aside>
+    </section>
+  </main>
+
+  <footer>
+    <hr />
+    <p>&copy; 2026 PTKM. All rights reserved.</p>
+    <p>
+      Credits: Product/game images belong to their respective owners and are used for educational purposes.
+    </p>
+  </footer>
 </body>
 </html>
