@@ -1,11 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PTKM | Register</title>
+  <meta name="description" content="Create a PTKM account to save your cart and track achievements." />
 </head>
+
 <body>
-    
+  <header>
+    <a href="index.html" aria-label="Go to Home">
+      <h1>PTKM</h1>
+    </a>
+    <p>Create an account to save your progress and purchases.</p>
+
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="games.html">Games (Shop)</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="checkout.html">Checkout</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="register.html" aria-current="page">Register</a></li>
+      </ul>
+    </nav>
+    <hr />
+  </header>
+
+  <main id="main-content">
+    <section aria-labelledby="register-title">
+      <h2 id="register-title">Register</h2>
+      <p>Fill out the form to create an account. (Phase 1: form is not processed.)</p>
+
+      <form action="#" method="post">
+        <fieldset>
+          <legend>Profile</legend>
+
+          <p>
+            <label for="fullname">Full name</label><br />
+            <input
+              type="text"
+              id="fullname"
+              name="fullname"
+              autocomplete="name"
+              required
+              placeholder="First Last"
+            />
+          </p>
+
+          <p>
+            <label for="username">Username</label><br />
+            <input
+              type="text"
+              id="username"
+              name="username"
+              required
+              minlength="3"
+              maxlength="20"
+              placeholder="3–20 characters"
+            />
+          </p>
+
+          <p>
+            <label for="phone">Phone (optional)</label><br />
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              autocomplete="tel"
+              placeholder="(###) ###-####"
+            />
+          </p>
+        </fieldset>
+
+        <fieldset>
+          <legend>Login details</legend>
+
+          <p>
+            <label for="email">Email</label><br />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              autocomplete="email"
+              required
+              placeholder="name@example.com"
+            />
+          </p>
+
+          <p>
+            <label for="new-password">Password</label><br />
+            <input
+              type="password"
+              id="new-password"
+              name="new-password"
+              autocomplete="new-password"
+              required
+              minlength="6"
+              placeholder="At least 6 characters"
+            />
+          </p>
+
+          <p>
+            <label for="account-type">Account type</label><br />
+            <select id="account-type" name="account-type" required>
+              <option value="" selected disabled>Select one</option>
+              <option value="player">Player</option>
+              <option value="collector">Collector</option>
+              <option value="guest">Guest</option>
+            </select>
+          </p>
+
+          <p>
+            Preferred platform:<br />
+            <label><input type="radio" name="platform" value="pc" required /> PC</label><br />
+            <label><input type="radio" name="platform" value="playstation" /> PlayStation</label><br />
+            <label><input type="radio" name="platform" value="xbox" /> Xbox</label><br />
+            <label><input type="radio" name="platform" value="nintendo" /> Nintendo</label>
+          </p>
+
+          <p>
+            <label>
+              <input type="checkbox" name="terms" required />
+              I agree to the Terms (educational demo).
+            </label>
+          </p>
+
+          <p>
+            <button type="submit">Create account</button>
+            <button type="reset">Clear</button>
+          </p>
+        </fieldset>
+      </form>
+
+      <aside>
+        <h3>Already have an account?</h3>
+        <p>
+          Go to <a href="login.html">Login</a>.
+        </p>
+      </aside>
+    </section>
+  </main>
+
+  <footer>
+    <hr />
+    <p>&copy; 2026 PTKM. All rights reserved.</p>
+    <p>
+      Credits: Any third-party logos/images belong to their respective owners and are used for educational purposes.
+    </p>
+  </footer>
 </body>
 </html>
