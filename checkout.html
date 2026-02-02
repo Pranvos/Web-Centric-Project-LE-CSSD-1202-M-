@@ -20,16 +20,16 @@
                     Home
                 </a>
             </li>
-            <li>
-                <a href="about.html">
-                    <img src="images/about us.png" alt="About us icon" height="30">
-                    About Us
+             <li>
+                <a href="contact.html">
+                    <img src="images/telephone.png" alt="Games icon" height="30">
+                    Contact Us
                 </a>
             </li>
-            <li>
-                <a href="contact.html">
-                    <img src="images/telephone.png" alt="Telephone icon" height="30">
-                    Contact Us
+             <li>
+                <a href="about.html">
+                    <img src="images/about-us.png" alt="About us icon" height="30">
+                    About Us
                 </a>
             </li>
             <li>
@@ -39,15 +39,21 @@
                 </a>
             </li>
             <li>
-                <a href="games.html">
-                    <img src="images\games icon.png" alt="Games icon" height="30">
-                    Games
-                </a>
-            </li>
-            <li>
                 <a href="cart.html">
                     <img src="images/cart.png" alt="Cart icon" height="30">
                     Your Cart
+                </a>
+            </li>
+            <li>
+            <a href="games.html">
+                <img src="images/games-icon.png" alt="Games icon" height="30">
+                Games
+            </a>
+            </li>
+            <li>
+                <a href="checkout.html">
+                    <img src="images/checkout-icon.png" alt="Checkout icon" height="30">
+                    Checkout
                 </a>
             </li>
         </ul>
@@ -58,6 +64,7 @@
         <h2>Checkout</h2>
         <p>Complete your purchase by providing your shipping and payment details.</p>
         <br>
+        <form action = "#" method = "post">
         <Fieldset><legend>Shipping Information</legend>
             <label for="name">Full Name:</label><br>
             <input type="text" id="name" name="name" placeholder="John Doe" required><br><br>
@@ -69,28 +76,29 @@
             <input type="text" id="city" name="city" placeholder="City Name" required><br><br>
 
             <label for="zip">ZIP Code:</label><br>
-            <input type="text" id="zip" name="zip" placeholder="XXX XXX" required><br><br>
+            <input type="text" id="zip" name="zip" placeholder="A1A 1A1" required><br><br>
 
         </Fieldset>
         <br>
-        <Fieldset><legend>Payment Information</legend>
+        <fieldset><legend>Payment Information</legend>
             <input type="radio" id="visa" name="payment" value="visa" checked>
-            <label for="visa"><img src="images/visa icon.png" alt="Visa" height="30"></label>
+            <label for="visa"><img src="images/visa-icon.png" alt="Visa" height="30"></label>
 
             <input type="radio" id="mastercard" name="payment" value="mastercard">
-            <label for="mastercard"><img src="images/mastercard icon.png" alt="MasterCard" height="40"></label><br><br>
+            <label for="mastercard"><img src="images/mastercard-icon.png" alt="MasterCard" height="40"></label><br><br>
 
             <label for="cardnumber">Card Number:</label><br>
-            <input type="text" id="cardnumber" name="cardnumber" placeholder="XXXX XXXX XXXX XXXX" required><br><br>
+            <input type="number" id="cardnumber" name="cardnumber" placeholder="XXXX XXXX XXXX XXXX" required><br><br>
 
             <label for="expiry">Expiry Date:</label><br>
             <input type="text" id="expiry" name="expiry" placeholder="XX/XX" required><br><br>
 
             <label for="cvv">CVV:</label><br>
             <input type="text" id="cvv" name="cvv" placeholder="XXX" required><br><br>
-        </Fieldset>
+        </fieldset>
         <br>
         <button type="submit">Place Order</button><br><br>
+        </form>
         <hr>
     </main>
 
@@ -100,6 +108,7 @@
         <a href="https://www.instagram.com/">                
         <img src = "images/insta.png" alt="Instagram logo" height = "20">
         </a>
+        <p>Icons and images from free online resources.</p>
     </footer>
 </body>
 </html>
