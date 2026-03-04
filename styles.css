@@ -2,13 +2,15 @@ body {
     font-family: "Comic Sans MS", "Comic Sans", Arial, sans-serif;
     margin: 0;
     padding: 0;
-    color: rgb(112, 0, 0);
-    background-color: #f4f4f4;
+    color: #ffffff;
+    background: radial-gradient(circle, #4a0000 0%, #1a1a1a 100%);
+    background-attachment: fixed;
 }
 
 h1, h2, h3 {
-    color: #000000;
+    color: #ff4d4d;
     text-transform: uppercase;
+    text-shadow: 2px 2px 4px #000000;
 }
 
 nav ul {
@@ -16,8 +18,9 @@ nav ul {
     display: flex;
     flex-wrap: wrap;
     padding: 20px;
-    background-color: #710000;
+    background: radial-gradient(circle at center, #990000, #4a0000);
     justify-content: center;
+    box-shadow: 0 5px 15px #000000;
 }
 
 nav a {
@@ -26,10 +29,49 @@ nav a {
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: transform 0.2s;
+}
+
+nav a:hover {
+    transform: scale(1.5);
+    color: #ff4d4d;
 }
 
 section ul {
     display: flex;
-    gap: 20px;
-    padding: 0;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 40px;
+    justify-content: center;
+    list-style: none;
+}
+
+section ul li {
+    background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid #4a0000;
+    box-shadow: 10px 10px 20px #0a0a0a, -5px -5px 15px #333333;
+    text-align: center;
+    width: 250px;
+}
+
+button {
+    background: radial-gradient(circle at top, #ff0000, #800000);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px #4d0000;
+    transition: all 0.1s;
+}
+
+
+footer {
+    background-color: #000000;
+    padding: 20px;
+    text-align: center;
+    border-top: 3px solid #710000;
 }
