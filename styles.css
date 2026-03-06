@@ -11,16 +11,31 @@ h1, h2, h3 {
     color: #ff4d4d;
     text-transform: uppercase;
     text-shadow: 2px 2px 4px #000000;
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
+/* nav bar */
+nav {
+    position: sticky;
+    top:0;
 }
 
 nav ul {
-    gap: 100px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-evenly;
+    column-gap: 30px;
+    row-gap: 20px;
     padding: 20px;
+    margin: 0;
+    
     background: radial-gradient(circle at center, #990000, #4a0000);
-    justify-content: center;
     box-shadow: 0 5px 15px #000000;
+    list-style-type: none;
 }
 
 nav a {
@@ -32,11 +47,17 @@ nav a {
     transition: transform 0.2s;
 }
 
+/* animations */
 nav a:hover {
     transform: scale(1.5);
     color: #ff4d4d;
 }
 
+button:hover{
+    transform: scale(1.25);
+}
+
+/*  */
 section ul {
     display: flex;
     flex-wrap: wrap;
@@ -56,6 +77,7 @@ section ul li {
     width: 250px;
 }
 
+/* general */
 button {
     background: radial-gradient(circle at top, #ff0000, #800000);
     color: white;
@@ -70,15 +92,43 @@ button {
 
 hr {
     border: none;
-    height: 2px;
+    height: 3px;
     background: linear-gradient(to right, #ff4d4d, #1a1a1a);
     margin: 0;
     padding: 0;
 }
 
+/* checkout page */
+.checkout-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 5vh 5vw;
+    gap: 20px;
+}
+
+.checkout-form fieldset {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 2vh 5vw 1vh;
+}
+
+.place-order {
+    margin-bottom: 5vh;
+    text-align: center;
+}
+
+/* footer */
 footer {
     background-color: #000000;
     padding: 20px;
     text-align: center;
-    /* border-top: 3px solid #710000; */
+}
+
+.instagram {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
 }

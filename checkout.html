@@ -61,54 +61,55 @@
         <hr>
     </nav>
     
-    <main>
-        <h2>Checkout</h2>
-        <p>Complete your purchase by providing your shipping and payment details.</p>
-        <br>
+    <main class="checkout">
         <form action = "#" method = "post">
-        <Fieldset><legend>Shipping Information</legend>
-            <label for="name">Full Name:</label><br>
-            <input type="text" id="name" name="name" placeholder="John Doe" required><br><br>
+        <div class="checkout-form">
+            <Fieldset><legend>Shipping Information</legend>
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" placeholder="John Doe" required><br>
 
-            <label for="address">Address:</label><br>
-            <input type="text" id="address" name="address" placeholder="123 Main Street" required><br><br>
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" placeholder="123 Main Street" required><br>
 
-            <label for="city">City:</label><br>
-            <input type="text" id="city" name="city" placeholder="City Name" required><br><br>
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" placeholder="City Name" required><br>
 
-            <label for="zip">ZIP Code:</label><br>
-            <input type="text" id="zip" name="zip" placeholder="A1A 1A1" required><br><br>
+                <label for="zip">ZIP Code:</label>
+                <input type="text" id="zip" name="zip" placeholder="A1A 1A1" required><br>
+            </Fieldset>
+            <fieldset><legend>Payment Information</legend>
+                <div>
+                    <input type="radio" id="visa" name="payment" value="visa" checked>
+                    <label for="visa"><img src="images/visa-icon.png" alt="Visa" height="30"></label>
 
-        </Fieldset>
-        <br>
-        <fieldset><legend>Payment Information</legend>
-            <input type="radio" id="visa" name="payment" value="visa" checked>
-            <label for="visa"><img src="images/visa-icon.png" alt="Visa" height="30"></label>
+                    <input type="radio" id="mastercard" name="payment" value="mastercard">
+                    <label for="mastercard"><img src="images/mastercard-icon.png" alt="MasterCard" height="40"></label><br>
+                </div><br>
 
-            <input type="radio" id="mastercard" name="payment" value="mastercard">
-            <label for="mastercard"><img src="images/mastercard-icon.png" alt="MasterCard" height="40"></label><br><br>
+                <label for="cardnumber">Card Number:</label>
+                <input type="number" id="cardnumber" name="cardnumber" placeholder="XXXX XXXX XXXX XXXX" required><br>
 
-            <label for="cardnumber">Card Number:</label><br>
-            <input type="number" id="cardnumber" name="cardnumber" placeholder="XXXX XXXX XXXX XXXX" required><br><br>
+                <label for="expiry">Expiry Date:</label>
+                <input type="text" id="expiry" name="expiry" placeholder="XX/XX" required><br>
 
-            <label for="expiry">Expiry Date:</label><br>
-            <input type="text" id="expiry" name="expiry" placeholder="XX/XX" required><br><br>
-
-            <label for="cvv">CVV:</label><br>
-            <input type="text" id="cvv" name="cvv" placeholder="XXX" required><br><br>
-        </fieldset>
-        <br>
-        <button type="submit">Place Order</button><br><br>
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" placeholder="XXX" required><br>
+            </fieldset>
+        </div>
+        <div class="place-order">
+            <button type="submit">Place Order</button>
+        </div>
         </form>
-        <hr>
     </main>
-
+    <hr>
     <footer>
         <p>© 2026 PTKM. All rights reserved.</p>
-        <p>Follow our instagram!</p>
-        <a href="https://www.instagram.com/">                
-        <img src = "images/insta.png" alt="Instagram logo" height = "20">
-        </a>
+        <div class="instagram">
+            <p>Follow our instagram!</p>
+            <a href="https://www.instagram.com/">                
+            <img src = "images/insta.png" alt="Instagram logo" height = "20">
+            </a>
+        </div>
         <p>Icons and images from free online resources.</p>
     </footer>
 </body>
