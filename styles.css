@@ -45,6 +45,11 @@ nav a {
     flex-direction: column;
     align-items: center;
     transition: transform 0.2s;
+    font-size: xx-small;
+}
+
+nav a img {
+    filter: invert(100%);
 }
 
 /* animations */
@@ -114,6 +119,7 @@ hr {
     justify-content: space-evenly;
     flex-grow: 1;
     padding: 2vh 5vw 1vh;
+    box-shadow: 5px 5px 15px #0a0a0a, -5px -5px 15px #333333;
 }
 
 .place-order {
@@ -126,6 +132,7 @@ footer {
     background-color: #000000;
     padding: 20px;
     text-align: center;
+    height: 100%;
 }
 
 .instagram {
@@ -133,4 +140,27 @@ footer {
     align-items: center;
     justify-content: center;
     gap: 20px;
+}
+
+/* breakpoints */
+/* portait phone is default */
+/* landscape phone */
+@media (min-width: 576px) {
+    nav a {
+        font-size: x-small;
+    }
+}
+
+/* tablet */
+@media (min-width: 768px) {
+    nav a {
+        font-size: small;
+    }
+}
+
+/* desktop */
+@media (min-width: 992px) {
+    nav a {
+        font-size: medium;
+    }
 }
