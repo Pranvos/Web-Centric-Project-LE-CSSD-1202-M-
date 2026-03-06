@@ -1,5 +1,5 @@
 body {
-    font-family: "Comic Sans MS", "Comic Sans", Arial, sans-serif;
+    font-family: "Helvetica", "Comic Sans MS", "Comic Sans", Arial, sans-serif;
     margin: 0;
     padding: 0;
     color: #ffffff;
@@ -68,10 +68,17 @@ button {
     transition: all 0.1s;
 }
 
+hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, #ff4d4d, #1a1a1a);
+    margin: 0;
+    padding: 0;
+}
 
 footer {
     background-color: #000000;
     padding: 20px;
     text-align: center;
-    border-top: 3px solid #710000;
+    /* border-top: 3px solid #710000; */
 }
