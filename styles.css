@@ -75,6 +75,7 @@ section ul li {
     box-shadow: 10px 10px 20px #0a0a0a, -5px -5px 15px #333333;
     text-align: center;
     width: 250px;
+    flex-grow: 1;
 }
 
 /* general */
@@ -111,6 +112,7 @@ hr {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    flex-grow: 1;
     padding: 2vh 5vw 1vh;
 }
 
