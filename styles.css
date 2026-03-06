@@ -5,6 +5,9 @@ body {
     color: #ffffff;
     background: radial-gradient(circle, #4a0000 0%, #1a1a1a 100%);
     background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 h1, h2, h3 {
@@ -76,8 +79,8 @@ section ul li {
     background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
     padding: 20px;
     border-radius: 15px;
-    border: 1px solid #4a0000;
-    box-shadow: 10px 10px 20px #0a0a0a, -5px -5px 15px #333333;
+    border: 2px solid #4a0000;
+    box-shadow: 10px 10px 20px #0a0a0a;
     text-align: center;
     width: 250px;
     flex-grow: 1;
@@ -103,6 +106,13 @@ hr {
     margin: 0;
     padding: 0;
 }
+
+input, textarea, select {
+    filter: invert();
+}
+
+/* cart */
+
 
 /* checkout page */
 .checkout-form {
@@ -132,7 +142,7 @@ footer {
     background-color: #000000;
     padding: 20px;
     text-align: center;
-    height: 100%;
+    flex-grow: 1;
 }
 
 .instagram {
