@@ -5,6 +5,9 @@ body {
     color: #ffffff;
     background: radial-gradient(circle, #4a0000 0%, #1a1a1a 100%);
     background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 h1, h2, h3 {
@@ -44,6 +47,11 @@ nav a {
     flex-direction: column;
     align-items: center;
     transition: transform 0.2s;
+    font-size: xx-small;
+}
+
+nav a img {
+    filter: invert(100%);
 }
 
 nav a:hover {
@@ -64,8 +72,8 @@ section ul li {
     background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
     padding: 20px;
     border-radius: 15px;
-    border: 1px solid #4a0000;
-    box-shadow: 10px 10px 20px #0a0a0a, -5px -5px 15px #333333;
+    border: 2px solid #4a0000;
+    box-shadow: 10px 10px 20px #0a0a0a;
     text-align: center;
     width: 250px;
     display: flex;
@@ -120,10 +128,42 @@ hr {
     padding: 0;
 }
 
+input, textarea, select {
+    filter: invert();
+}
+
+/* cart */
+
+
+/* checkout page */
+.checkout-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 5vh 5vw;
+    gap: 20px;
+}
+
+.checkout-form fieldset {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-grow: 1;
+    padding: 2vh 5vw 1vh;
+    box-shadow: 5px 5px 15px #0a0a0a, -5px -5px 15px #333333;
+}
+
+.place-order {
+    margin-bottom: 5vh;
+    text-align: center;
+}
+
+/* footer */
 footer {
     background-color: #000000;
     padding: 20px;
     text-align: center;
+    flex-grow: 1;
 }
 
 .instagram {
@@ -131,4 +171,27 @@ footer {
     align-items: center;
     justify-content: center;
     gap: 20px;
+}
+
+/* breakpoints */
+/* portait phone is default */
+/* landscape phone */
+@media (min-width: 576px) {
+    nav a {
+        font-size: x-small;
+    }
+}
+
+/* tablet */
+@media (min-width: 768px) {
+    nav a {
+        font-size: small;
+    }
+}
+
+/* desktop */
+@media (min-width: 992px) {
+    nav a {
+        font-size: medium;
+    }
 }
