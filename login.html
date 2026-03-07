@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PTKM | Login</title>
-  <meta name="description" content="Login to PTKM to access your account and track your progress." />
-  <link href="/styles.css"rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - PTKM Gaming</title>
+    <link href="styles.css" rel="stylesheet">
 </head>
-
 <body>
     <header>
         <h1>Login</h1>
@@ -48,10 +46,10 @@
                 </a>
             </li>
             <li>
-            <a href="games.html">
-                <img src="images/games-icon.png" alt="Games icon" height="30">
-                Games
-            </a>
+                <a href="games.html">
+                    <img src="images/games-icon.png" alt="Games icon" height="30">
+                    Games
+                </a>
             </li>
             <li>
                 <a href="checkout.html">
@@ -63,70 +61,68 @@
         <hr>
     </nav>
 
-  <main id="main-content">
-    <section aria-labelledby="login-title">
-      <h2 id="login-title">Login</h2>
-      <p>Use your email and password to sign in. (Phase 1: form is not processed.)</p>
+    <main id="main-content">
+        <section aria-labelledby="login-title">
+            <h2 id="login-title">Account Access</h2>
+            <p>Use your email and password to sign in.</p>
 
-      <form action="#" method="post">
-        <fieldset>
-          <legend>Account details</legend>
+            <form action="#" method="post">
+                <div class="form-container">
+                    <fieldset>
+                        <legend>Login Details</legend>
 
-          <p>
-            <label for="email">Email</label><br />
-            <input
-              type="email"
-              id="email"
-              name="email"
-              autocomplete="email"
-              required
-              placeholder="name@example.com"
-            />
-          </p>
+                        <label for="email">Email</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            autocomplete="email"
+                            required
+                            placeholder="name@example.com"
+                        >
 
-          <p>
-            <label for="password">Password</label><br />
-            <input
-              type="password"
-              id="password"
-              name="password"
-              autocomplete="current-password"
-              required
-              minlength="6"
-              placeholder="At least 6 characters"
-            />
-          </p>
+                        <label for="password">Password</label>
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            autocomplete="current-password"
+                            required
+                            minlength="6"
+                            placeholder="At least 6 characters"
+                        >
 
-          <p>
-            <label>
-              <input type="checkbox" name="remember" />
-              Remember me
-            </label>
-          </p>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="remember" name="remember">
+                            <label for="remember">Remember me</label>
+                        </div>
+                        
+                        <div class="form-buttons">
+                            <button type="submit">Sign in</button>
+                            <button type="reset" class="secondary-btn">Clear</button>
+                        </div>
+                    </fieldset>
+                </div>
+            </form>
 
-          <p>
-            <button type="submit">Sign in</button>
-            <button type="reset">Clear</button>
-          </p>
-        </fieldset>
-      </form>
+            <aside style="text-align: center; padding-bottom: 20px;">
+                <h3>New here?</h3>
+                <p>
+                    Create an account on the <a href="register.html" style="color: #ff4d4d; text-decoration: none; font-weight: bold;">Register</a> page.
+                </p>
+            </aside>
+            <hr>
+        </section>
+    </main>
 
-      <aside>
-        <h3>New here?</h3>
-        <p>
-          Create an account on the <a href="register.html">Register</a> page.
-        </p>
-      <hr>
-      </aside>
-    </section>
-  </main>
-
-<footer>
+    <footer>
+        <div class="instagram">
+            <p>Follow our instagram!</p>
+            <a href="https://www.instagram.com/">                
+                <img src="images/insta.png" alt="Instagram logo" height="20">
+            </a>
+        </div>
         <p>© 2026 PTKM. All rights reserved.</p>
-        <p>Follow our instagram!</p>
-        <a href="https://www.instagram.com/">                
-        <img src = "images/insta.png" alt="Instagram logo" height = "20">
-        </a>
         <p>Icons and images from free online resources.</p>
     </footer>
 </body>

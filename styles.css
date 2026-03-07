@@ -18,10 +18,10 @@ p {
     text-align: center;
 }
 
-/* nav bar */
 nav {
     position: sticky;
-    top:0;
+    top: 0;
+    z-index: 100;
 }
 
 nav ul {
@@ -32,7 +32,6 @@ nav ul {
     row-gap: 20px;
     padding: 20px;
     margin: 0;
-    
     background: radial-gradient(circle at center, #990000, #4a0000);
     box-shadow: 0 5px 15px #000000;
     list-style-type: none;
@@ -47,17 +46,11 @@ nav a {
     transition: transform 0.2s;
 }
 
-/* animations */
 nav a:hover {
     transform: scale(1.5);
     color: #ff4d4d;
 }
 
-button:hover{
-    transform: scale(1.25);
-}
-
-/*  */
 section ul {
     display: flex;
     flex-wrap: wrap;
@@ -75,10 +68,33 @@ section ul li {
     box-shadow: 10px 10px 20px #0a0a0a, -5px -5px 15px #333333;
     text-align: center;
     width: 250px;
-    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 
-/* general */
+section ul li strong {
+    font-size: 1.2em;
+    color: #ff4d4d;
+    margin-bottom: 15px;
+}
+
+section ul li img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.shop-more-card {
+    justify-content: center;
+    background: linear-gradient(145deg, #4a0000, #1a1a1a);
+}
+
+.shop-more-card a {
+    text-decoration: none;
+}
+
 button {
     background: radial-gradient(circle at top, #ff0000, #800000);
     color: white;
@@ -89,6 +105,11 @@ button {
     cursor: pointer;
     box-shadow: 0 4px #4d0000;
     transition: all 0.1s;
+    margin-top: auto;
+}
+
+button:hover {
+    transform: scale(1.1);
 }
 
 hr {
@@ -99,29 +120,6 @@ hr {
     padding: 0;
 }
 
-/* checkout page */
-.checkout-form {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    padding: 5vh 5vw;
-    gap: 20px;
-}
-
-.checkout-form fieldset {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    flex-grow: 1;
-    padding: 2vh 5vw 1vh;
-}
-
-.place-order {
-    margin-bottom: 5vh;
-    text-align: center;
-}
-
-/* footer */
 footer {
     background-color: #000000;
     padding: 20px;
@@ -129,7 +127,7 @@ footer {
 }
 
 .instagram {
-    display:flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     gap: 20px;

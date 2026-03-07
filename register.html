@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Register</title>
-  <meta name="description" content="Create a PTKM account to save your cart and track achievements." />
-  <link href="/styles.css"rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - PTKM Gaming</title>
+    <link href="styles.css" rel="stylesheet">
 </head>
-
 <body>
-     <header>
+    <header>
         <h1>Register</h1>
         <p>Create an account to start shopping.</p>
         <hr>
@@ -48,10 +46,10 @@
                 </a>
             </li>
             <li>
-            <a href="games.html">
-                <img src="images/games-icon.png" alt="Games icon" height="30">
-                Games
-            </a>
+                <a href="games.html">
+                    <img src="images/games-icon.png" alt="Games icon" height="30">
+                    Games
+                </a>
             </li>
             <li>
                 <a href="checkout.html">
@@ -63,128 +61,80 @@
         <hr>
     </nav>
 
-  <main id="main-content">
-    <section aria-labelledby="register-title">
-      <h2 id="register-title">Register</h2>
-      <p>Fill out the form to create an account. (Phase 1: form is not processed.)</p>
+    <main id="main-content">
+        <section aria-labelledby="register-title">
+            <h2 id="register-title">Create Account</h2>
+            <p>Fill out the form to join the community.</p>
 
-      <form action="#" method="post">
-        <fieldset>
-          <legend>Profile</legend>
+            <form action="#" method="post">
+                <div class="form-container">
+                    <fieldset>
+                        <legend>Profile Information</legend>
 
-          <p>
-            <label for="fullname">Full name</label><br />
-            <input
-              type="text"
-              id="fullname"
-              name="fullname"
-              autocomplete="name"
-              required
-              placeholder="First Last"
-            />
-          </p>
+                        <label for="fullname">Full Name</label>
+                        <input type="text" id="fullname" name="fullname" autocomplete="name" required placeholder="First Last">
 
-          <p>
-            <label for="username">Username</label><br />
-            <input
-              type="text"
-              id="username"
-              name="username"
-              required
-              minlength="3"
-              maxlength="20"
-              placeholder="3–20 characters"
-            />
-          </p>
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" required minlength="3" maxlength="20" placeholder="3 to 20 characters">
 
-          <p>
-            <label for="phone">Phone (optional)</label><br />
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              autocomplete="tel"
-              placeholder="1234567890"
-            />
-          </p>
-        </fieldset>
+                        <label for="phone">Phone (optional)</label>
+                        <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="1234567890">
+                    </fieldset>
 
-        <fieldset>
-          <legend>Login details</legend>
+                    <fieldset>
+                        <legend>Login Details</legend>
 
-          <p>
-            <label for="email">Email</label><br />
-            <input
-              type="email"
-              id="email"
-              name="email"
-              autocomplete="email"
-              required
-              placeholder="name@example.com"
-            />
-          </p>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" autocomplete="email" required placeholder="name@example.com">
 
-          <p>
-            <label for="new-password">Password</label><br />
-            <input
-              type="password"
-              id="new-password"
-              name="new-password"
-              autocomplete="new-password"
-              required
-              minlength="6"
-              placeholder="At least 6 characters"
-            />
-          </p>
+                        <label for="new-password">Password</label>
+                        <input type="password" id="new-password" name="new-password" autocomplete="new-password" required minlength="6" placeholder="At least 6 characters">
 
-          <p>
-            <label for="account-type">Account type</label><br />
-            <select id="account-type" name="account-type" required>
-              <option value="" selected disabled>Select one</option>
-              <option value="player">Player</option>
-              <option value="collector">Collector</option>
-              <option value="guest">Guest</option>
-            </select>
-          </p>
+                        <label for="account-type">Account Type</label>
+                        <select id="account-type" name="account-type" required>
+                            <option value="" selected disabled>Select one</option>
+                            <option value="player">Player</option>
+                            <option value="collector">Collector</option>
+                            <option value="guest">Guest</option>
+                        </select>
 
-          <p>
-            Preferred platform:<br />
-            <label><input type="radio" name="platform" value="pc" required /> PC</label><br />
-            <label><input type="radio" name="platform" value="playstation" /> PlayStation</label><br />
-            <label><input type="radio" name="platform" value="xbox" /> Xbox</label><br />
-            <label><input type="radio" name="platform" value="nintendo" /> Nintendo</label>
-          </p>
+                        <label>Preferred Platform</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="platform" value="pc" required> PC</label>
+                            <label><input type="radio" name="platform" value="playstation"> PlayStation</label>
+                            <label><input type="radio" name="platform" value="xbox"> Xbox</label>
+                            <label><input type="radio" name="platform" value="nintendo"> Nintendo</label>
+                        </div>
 
-          <p>
-            <label>
-              <input type="checkbox" name="terms" required />
-              I agree to the Terms (educational demo).
-            </label>
-          </p>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="terms" name="terms" required>
+                            <label for="terms">I agree to the Terms</label>
+                        </div>
+                    </fieldset>
+                </div>
 
-          <p>
-            <button type="submit">Create account</button>
-            <button type="reset">Clear</button>
-          </p>
-        </fieldset>
-      </form>
+                <div class="form-buttons">
+                    <button type="submit">Create Account</button>
+                    <button type="reset" class="secondary-btn">Clear</button>
+                </div>
+            </form>
 
-      <aside>
-        <h3>Already have an account?</h3>
-        <p>
-          Go to <a href="login.html">Login</a>.
-          <hr>
-        </p>
-      </aside>
-    </section>
-  </main>
+            <aside style="text-align: center; padding-bottom: 20px;">
+                <h3>Already have an account?</h3>
+                <p>Go to <a href="login.html" style="color: #ff4d4d; text-decoration: none; font-weight: bold;">Login</a>.</p>
+            </aside>
+            <hr>
+        </section>
+    </main>
 
-<footer>
+    <footer>
+        <div class="instagram">
+            <p>Follow our instagram!</p>
+            <a href="https://www.instagram.com/">                
+                <img src="images/insta.png" alt="Instagram logo" height="20">
+            </a>
+        </div>
         <p>© 2026 PTKM. All rights reserved.</p>
-        <p>Follow our instagram!</p>
-        <a href="https://www.instagram.com/">                
-        <img src = "images/insta.png" alt="Instagram logo" height = "20">
-        </a>
         <p>Icons and images from free online resources.</p>
     </footer>
 </body>

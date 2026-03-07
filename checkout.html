@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout</title>
-    <link href="/styles.css"rel="stylesheet">
+    <title>Checkout - PTKM Gaming</title>
+    <link href="styles.css" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -46,10 +46,10 @@
                 </a>
             </li>
             <li>
-            <a href="games.html">
-                <img src="images/games-icon.png" alt="Games icon" height="30">
-                Games
-            </a>
+                <a href="games.html">
+                    <img src="images/games-icon.png" alt="Games icon" height="30">
+                    Games
+                </a>
             </li>
             <li>
                 <a href="checkout.html">
@@ -62,54 +62,57 @@
     </nav>
     
     <main class="checkout">
-        <form action = "#" method = "post">
-        <div class="checkout-form">
-            <Fieldset><legend>Shipping Information</legend>
-                <label for="name">Full Name:</label>
-                <input type="text" id="name" name="name" placeholder="John Doe" required><br>
+        <form action="#" method="post">
+            <div class="checkout-form">
+                <fieldset>
+                    <legend>Shipping Information</legend>
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" placeholder="John Doe" required>
 
-                <label for="address">Address:</label>
-                <input type="text" id="address" name="address" placeholder="123 Main Street" required><br>
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address" placeholder="123 Main Street" required>
 
-                <label for="city">City:</label>
-                <input type="text" id="city" name="city" placeholder="City Name" required><br>
+                    <label for="city">City:</label>
+                    <input type="text" id="city" name="city" placeholder="City Name" required>
 
-                <label for="zip">ZIP Code:</label>
-                <input type="text" id="zip" name="zip" placeholder="A1A 1A1" required><br>
-            </Fieldset>
-            <fieldset><legend>Payment Information</legend>
-                <div>
-                    <input type="radio" id="visa" name="payment" value="visa" checked>
-                    <label for="visa"><img src="images/visa-icon.png" alt="Visa" height="30"></label>
+                    <label for="zip">ZIP Code:</label>
+                    <input type="text" id="zip" name="zip" placeholder="A1A 1A1" required>
+                </fieldset>
 
-                    <input type="radio" id="mastercard" name="payment" value="mastercard">
-                    <label for="mastercard"><img src="images/mastercard-icon.png" alt="MasterCard" height="40"></label><br>
-                </div><br>
+                <fieldset>
+                    <legend>Payment Information</legend>
+                    <div class="payment-methods">
+                        <input type="radio" id="visa" name="payment" value="visa" checked>
+                        <label for="visa"><img src="images/visa-icon.png" alt="Visa" height="30"></label>
 
-                <label for="cardnumber">Card Number:</label>
-                <input type="number" id="cardnumber" name="cardnumber" placeholder="XXXX XXXX XXXX XXXX" required><br>
+                        <input type="radio" id="mastercard" name="payment" value="mastercard">
+                        <label for="mastercard"><img src="images/mastercard-icon.png" alt="MasterCard" height="40"></label>
+                    </div>
 
-                <label for="expiry">Expiry Date:</label>
-                <input type="text" id="expiry" name="expiry" placeholder="XX/XX" required><br>
+                    <label for="cardnumber">Card Number:</label>
+                    <input type="number" id="cardnumber" name="cardnumber" placeholder="XXXX XXXX XXXX XXXX" required>
 
-                <label for="cvv">CVV:</label>
-                <input type="text" id="cvv" name="cvv" placeholder="XXX" required><br>
-            </fieldset>
-        </div>
-        <div class="place-order">
-            <button type="submit">Place Order</button>
-        </div>
+                    <label for="expiry">Expiry Date:</label>
+                    <input type="text" id="expiry" name="expiry" placeholder="XX/XX" required>
+
+                    <label for="cvv">CVV:</label>
+                    <input type="text" id="cvv" name="cvv" placeholder="XXX" required>
+                </fieldset>
+            </div>
+            <div class="place-order">
+                <button type="submit">Place Order</button>
+            </div>
         </form>
     </main>
     <hr>
     <footer>
-        <p>© 2026 PTKM. All rights reserved.</p>
         <div class="instagram">
             <p>Follow our instagram!</p>
             <a href="https://www.instagram.com/">                
-            <img src = "images/insta.png" alt="Instagram logo" height = "20">
+                <img src="images/insta.png" alt="Instagram logo" height="20">
             </a>
         </div>
+        <p>© 2026 PTKM. All rights reserved.</p>
         <p>Icons and images from free online resources.</p>
     </footer>
 </body>
