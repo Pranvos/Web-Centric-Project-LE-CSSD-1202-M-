@@ -158,6 +158,272 @@ input, textarea, select {
     text-align: center;
 }
 
+/*Contact Us & Login forms*/
+.contact-page input,
+.contact-page textarea,
+.contact-page select,
+#main-content input,
+#main-content textarea,
+#main-content select
+{
+    filter: none; 
+}
+
+.contact-page
+{
+    flex: 1; 
+    display: flex; 
+    justify-content: center;
+    padding: 40px 20px 60px; 
+}
+
+#main-content section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px 60px;
+}
+
+.contact-page form{
+    width: 100%; 
+    max-width: 780px; 
+}
+
+#main-content .form-container{
+    width: 100%; 
+    max-width: 460px; 
+}
+
+.form-container{
+    display: flex; 
+    flex-direction: column; 
+    gap: 24px; 
+}
+
+.contact-page fieldset,
+#main-content fieldset
+{
+    border: 1px solid rgba(255, 77, 77, 0.35); 
+    border-radius: 12px; 
+    padding: 28px 32px 24px; 
+    margin: 0; 
+    background: linear-gradient(145deg, rgba(42, 10, 10, 0.85), rgba(20, 20, 20, 0.9));
+    box-shadow:0 4px 24px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255, 77, 77, 0.1);
+    display: flex; 
+    flex-direction: column; 
+    gap: 6px; 
+}
+
+.contact-page legend,
+#main-content legend
+{
+    color: #ff4d4d; 
+    font-size: 0.75rem;
+    font-weight: 700; 
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 0 12px;
+}
+
+.contact-page label,
+#main-content label
+{
+    display: block;
+    color: #aaaaaa;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: 14px;
+    margin-bottom: 4px;
+}
+
+.contact-page input[type="text"],
+.contact-page input[type="email"],
+.contact-page input[type="tel"],
+.contact-page select, 
+.contact-page textarea,
+
+#main-content input[type="text"],
+#main-content input[type="email"],
+#main-content input[type="tel"],
+#main-content input[type="password"],
+#main-content select, 
+#main-content textarea
+{
+    width: 100%;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 0.9rem;
+    padding: 11px 14px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.contact-page input[type="text"]:focus,
+.contact-page input[type="email"]:focus,
+.contact-page input[type="tel"]:focus,
+.contact-page select:focus, 
+.contact-page textarea:focus,
+
+#main-content input[type="text"]:focus,
+#main-content input[type="email"]:focus,
+#main-content input[type="tel"]:focus,
+#main-content input[type="password"]:focus,
+#main-content select:focus, 
+#main-content textarea:focus
+{
+    border-color: #ff4d4d; 
+    background: rgba(74, 0, 0, 0.3);
+    box-shadow: 0 0 0 3px rgba(255, 77, 77, 0.15);
+
+}
+
+.contact-page input::placeholder,
+.contact-page textarea::placeholder,
+
+#main-content input::placeholder,
+#main-content textarea::placeholder
+{
+    color: rgba(255, 255, 255, 0.25); 
+}
+
+.contact-page select,
+#main-content select{
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23ff4d4d' stroke-width='1.8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 36px;
+}
+
+.contact-page select option,
+#main-content select option{
+    background: #1a1a1a; 
+    color:#ffffff; 
+}
+
+.contact-page textarea{
+    resize: vertical; 
+    min-height: 120px; 
+    line-height: 1.5; 
+}
+
+.radio-group{
+    display:flex; 
+    gap: 28px; 
+    margin-top: 6px;
+    align-items: center;
+}
+
+.radio-group input[type="radio"]{
+    width: auto;
+    accent-color: #ff4d4d;
+    cursor: pointer;
+    transform: scale(1.2);
+    filter:none; 
+}
+
+.radio-group label{
+    margin: 0;
+    font-size: 0.85rem;
+    color: #cccccc; 
+    text-transform: none;
+    letter-spacing: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px; 
+}
+
+.contact-page input[type="file"]{
+    background: transparent;
+    border: 1px dashed rgba(255, 77, 77, 0.4); 
+    border-radius: 8px; 
+    color: #aaaaaa; 
+    font-size: 0.82rem;
+    padding: 10px 14px; 
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.contact-page input[type="file"]:hover{
+    border-color: #ff4d4d; 
+}
+
+.checkbox-group{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 16px;
+    padding: 12px 16px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.checkbox-group input[type="checkbox"]{
+    width: auto;
+    accent-color: #ff4d4d;
+    transform: scale(1.25); 
+    cursor: pointer;
+    flex-shrink: 0;
+    filter: none;
+}
+
+.checkbox-group label{
+    margin: 0;
+    font-size: 0.82rem;
+    color: #cccccc;
+    text-transform: none;
+    letter-spacing: 0;
+    cursor: pointer;
+    line-height: 1.4;
+    display: inline;
+}
+
+
+.form-buttons{
+    display: flex; 
+    gap: 14px;
+    justify-content: center;
+    margin-top: 28px;
+}
+
+.form-buttons button[type="submit"]{
+    margin-top: 0;
+}
+
+.secondary-btn{
+    background: transparent;
+    color: #888888;
+    border: 1px solid rgba(255, 255, 255, 0.15); 
+    box-shadow: none;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-size: 0.85rem; 
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+    margin-top: 0;
+}
+
+.secondary-btn:hover{
+    border-color: rgba(255, 255, 255, 0.35);
+    color: #cccccc;
+    transform: none;
+}
+
+
+
 /* footer */
 footer {
     background-color: #000000;
