@@ -1,6 +1,20 @@
 main{
     flex: 1; 
+    animation: fadeIn 0.6s ease-out; 
 }
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 body {
     font-family: "Helvetica", "Comic Sans MS", "Comic Sans", Arial, sans-serif;
     margin: 0;
@@ -18,6 +32,18 @@ h1, h2, h3 {
     text-transform: uppercase;
     text-shadow: 2px 2px 4px #000000;
     text-align: center;
+}
+
+h1{
+    animation: glowPulse 3s ease-in-out infinite; 
+}
+
+/*Animation for the header title*/
+@keyframes glowPulse{
+    0% {text-shadow: 2px 2px 4px #000000;}
+    50% {text-shadow: 0px 0px 20px #ff4d4d, 0 0 40px #ff0000;}
+    100% {text-shadow: 2px 2px 4px #000000;}
+
 }
 
 p {
@@ -132,18 +158,23 @@ hr {
 }
 
 input, textarea, select {
-    filter: invert();
+    background: rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 0.9rem;
+    padding: 11px 14px;
+    outline:none; 
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* cart */
 
 
 /* checkout page */
-.checkout input,
-.checkout select,
-.checkout textarea{
-    filter: none; 
-}
+
 
 .checkout{
     display: flex; 
@@ -198,7 +229,8 @@ input, textarea, select {
 }
 
 .checkout-form input[type="text"],
-.checkout-form input[type="number"]{
+.checkout-form input[type="number"],
+.checkout-form input[type = "tel"]{
     width: 100%;
     box-sizing: border-box;
     background-color: rgba(0, 0, 0, 0.45);
@@ -215,7 +247,8 @@ input, textarea, select {
 }
 
 .checkout-form input[type="text"]:focus,
-.checkout-form input[type="number"]:focus{
+.checkout-form input[type="number"]:focus,
+.checkout-form input[type = "tel"]:focus{
     border-color: #ff4d4d;
     background: rgba(74, 0, 0, 0.3);
     box-shadow: 0 0 0 3px rgba(255, 77, 77, 0.15);
@@ -266,15 +299,6 @@ input, textarea, select {
     text-transform: uppercase;
 }
 /*Contact Us & Login forms*/
-.contact-page input,
-.contact-page textarea,
-.contact-page select,
-#main-content input,
-#main-content textarea,
-#main-content select
-{
-    filter: none; 
-}
 
 .contact-page
 {
@@ -530,7 +554,6 @@ input, textarea, select {
 }
 
 
-
 /* footer */
 footer {
     background-color: #000000;
@@ -548,15 +571,39 @@ footer {
 /* breakpoints */
 /* portait phone is default */
 /* landscape phone */
+
+/*Small mobile*/
+nav a{font-size: xx-small;}
+section ul li {width: 90vw;}
+section ul{padding: 20px; gap: 15px;}
+h1{font-size: 1.4rem;}
+h2{font-size: 1.1rem;}
+
+
+/*Normal phone*/
 @media (min-width: 576px) {
-    nav a {
-        font-size: x-small;
-    }
+    nav a {font-size: x-small;}
     h1{font-size: 1.6rem;}
     h2{font-size: 1.2rem;}
-    header p{font-size: 0.85rem;}
+    section ul li {width: 220px;}
 }
 
+/* tablet */
+@media (min-width: 768px){
+    
+    nav a {font-size: small;}
+    section ul li{width: 200px;}
+    .checkout-form{gap: 32px;}
+}
+
+/* desktop */
+@media (min-width: 992px) {
+    nav a {font-size: medium;}
+    section ul li{width: 250px;}
+    .checkout-form{flex-wrap: nowrap;}
+}
+
+/*Landscape phone for special cases*/
 @media (max-width: 768px) and (orientation: landscape){
     nav ul{
         padding: 10px;
@@ -566,61 +613,5 @@ footer {
         padding: 10px 0;
     }
 }
-/* tablet */
-@media (min-width: 768px){
-    
-    nav a {
-        font-size: small;
-    }
 
-    section ul li{
-        width: 200px; 
-    }
-}
 
-/* desktop */
-@media (min-width: 992px) {
-    nav a {
-        font-size: medium;
-    }
-
-    section ul li{
-        width: 250px; 
-    }
-
-    .checkout-form{
-        flex-wrap: nowrap;
-    }
-}
-
-/*Small mobile*/
-@media(max-width: 480px){
-
-    .instagram{
-        flex-direction: column;
-        gap: 8px;
-    }
-
-    section ul{
-        padding: 20px; 
-        gap: 15px; 
-    }
-
-    section ul li{
-        width: 90vw; 
-    }
-
-    .checkout-form{
-        flex-direction: column;
-        padding: 3vh 5vw; 
-    }
-
-    .form-buttons{
-        flex-direction: column;
-        align-items: center;
-    }
-
-    h1{font-size:  1.5rem;}
-    h2{font-size: 1.2rem; }
-
-}
