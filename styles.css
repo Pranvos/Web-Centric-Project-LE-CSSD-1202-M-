@@ -128,10 +128,6 @@ hr {
     padding: 0;
 }
 
-input, textarea, select {
-    filter: invert();
-}
-
 /* cart */
 
 
@@ -141,7 +137,7 @@ input, textarea, select {
     flex-wrap: wrap;
     justify-content: space-evenly;
     padding: 5vh 5vw;
-    gap: 20px;
+    gap: 50px;
 }
 
 .checkout-form fieldset {
@@ -149,13 +145,66 @@ input, textarea, select {
     flex-direction: column;
     justify-content: space-evenly;
     flex-grow: 1;
-    padding: 2vh 5vw 1vh;
-    box-shadow: 5px 5px 15px #0a0a0a, -5px -5px 15px #333333;
+    padding: 2vh 5vw 4vh;
+
+    border: 1px solid rgba(255, 77, 77, 0.35); 
+    border-radius: 12px; 
+    background: linear-gradient(145deg, rgba(42, 10, 10, 0.85), rgba(20, 20, 20, 0.9));
+    box-shadow:0 4px 24px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255, 77, 77, 0.1);
+    gap: 6px; 
+
+    color: #ff4d4d; 
+    font-size: 0.75rem;
+    font-weight: 700; 
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.checkout-form label {
+    display: block;
+    color: #aaaaaa;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: 14px;
+    margin-bottom: 4px;
+}
+
+.checkout-form input[type="text"],
+.checkout-form input[type="number"]
+{
+    width: 100%;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 0.9rem;
+    padding: 11px 14px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.checkout-form input[type="radio"],
+.checkout-form img {
+    accent-color: #ff4d4d;
+    cursor: pointer;
+}
+
+.payment-methods {
+    display: flex;
+    gap: 12px;
 }
 
 .place-order {
+    display: flex;
     margin-bottom: 5vh;
-    text-align: center;
+    justify-content: center;
+    gap: 50px;
 }
 
 /*Contact Us & Login forms*/
