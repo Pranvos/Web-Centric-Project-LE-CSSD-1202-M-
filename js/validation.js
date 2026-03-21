@@ -220,6 +220,12 @@ if (document.title.includes("Contact")) {
         valid = false;
       } else clearError("topic-error");
 
+      // Contact method
+      const contactmethod = document.querySelector('input[name="contact_method"]:checked');
+      if (!contactmethod){
+        showError("contactmethod-error", "You must select a contact method."); 
+      } else clearError("contactmethod-error"); 
+
       // Message
       const message = document.getElementById("message").value.trim();
       if (message.length < 10) {
