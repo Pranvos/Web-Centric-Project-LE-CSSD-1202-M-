@@ -221,6 +221,13 @@ if (document.title.includes("Contact")) {
         valid = false;
       } else clearError("message-error");
 
+      //Consent
+      const conset = document.getElementById("consent").checked; 
+      if (!conset) {
+      showError("terms-error", "You must agree to be contacted regarding your inquiry.");
+      valid = false;
+    } else clearError("terms-error");
+
       if (valid) {
         alert("Message sent! We will get back to you soon.");
         contactForm.reset();
