@@ -149,6 +149,12 @@ if (document.title.includes("Checkout")) {
         valid = false;
       } else clearError("zip-error");
 
+      //Card type
+      const cardtype = document.querySelector('input[name="payment"]:checked');
+      if(!cardtype){
+        showError("cardtype-error", "You must select a card type"); 
+      } else clearError("cardtype-error"); 
+
       // Card number
       const cardNumber = document.getElementById("cardnumber").value.trim();
       if (!cardRegex.test(cardNumber)) {

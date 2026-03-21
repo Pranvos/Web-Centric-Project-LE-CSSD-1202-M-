@@ -86,12 +86,13 @@
                 <fieldset>
                     <legend>Payment Information</legend>
                     <div class="payment-methods">
-                        <input type="radio" id="visa" name="payment" value="visa" checked>
+                        <input type="radio" id="visa" name="payment" value="visa">
                         <label for="visa"><img src="images/visa-icon.png" alt="Visa" height="30"></label>
 
                         <input type="radio" id="mastercard" name="payment" value="mastercard">
                         <label for="mastercard"><img src="images/mastercard-icon.png" alt="MasterCard" height="40"></label>
                     </div>
+                    <span class="error-msg" id="cardtype-error"></span>
 
                     <label for="cardnumber">Card Number</label>
                     <input type="text" pattern="[0-9]{16}" id="cardnumber" name="cardnumber" placeholder="XXXX XXXX XXXX XXXX" required>
