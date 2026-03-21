@@ -62,19 +62,22 @@
     </nav>
 
     <main class="contact-page">
-        <form action="#" method="post">
+        <form action="#" method="post" novalidate>
             <div class="form-container">
                 <fieldset>
                     <legend>Personal Information</legend>
                     
                     <label for="name">Full Name</label>
                     <input type="text" id="name" name="name" placeholder="Full name" required>
+                    <span class="error-msg" id="name-error"></span>
 
                     <label for="email">Email Address</label>
                     <input type="email" id="email" name="email" placeholder="xyz@domain.com" required>
+                    <span class="error-msg" id="email-error"></span>
 
                     <label for="phone">Phone Number</label>
                     <input type="tel" id="phone" name="phone" placeholder="1234567890" required>
+                    <span class="error-msg" id="phone-error"></span>
                 </fieldset>
 
                 <fieldset>
@@ -88,6 +91,7 @@
                         <option value="business">Business Inquiry</option>
                         <option value="other">Other</option>
                     </select>
+                    <span class="error-msg" id="topic-error"></span>
 
                     <label>Preferred Contact Method</label>
                     <div class="radio-group">
@@ -99,6 +103,7 @@
 
                     <label for="message">Message</label>
                     <textarea id="message" name="message" rows="6" required></textarea>
+                    <span class="error-msg" id="message-error"></span>
                 </fieldset>
 
                 <fieldset>
@@ -131,5 +136,8 @@
         <p>© 2026 PTKM. All rights reserved.</p>
         <p>Icons and images from free online resources.</p>
     </footer>
+
+    <!-- Java script code for form validation-->
+    <script src="js/validation.js"></script>
 </body>
 </html>

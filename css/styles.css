@@ -613,4 +613,16 @@ h2{font-size: 1.1rem;}
     }
 }
 
+/*Error message*/
+.error-msg {
+  font-size: 0.95rem;
+  display: block;
+  margin-top: 2px;
+  margin-left: 4px;
+}
 
+.login-page .error-msg {
+  font-size: 0.75rem;
+  display: block;
+  margin-top: 2px;
+}

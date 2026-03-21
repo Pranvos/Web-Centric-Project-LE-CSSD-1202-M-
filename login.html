@@ -61,12 +61,12 @@
         <hr>
     </nav>
 
-    <main id="main-content">
+    <main id="main-content" class="login-page">
         <section aria-labelledby="login-title">
             <h2 id="login-title">Account Access</h2>
             <p>Use your email and password to sign in.</p>
 
-            <form action="#" method="post">
+            <form action="#" method="post" novalidate>
                 <div class="form-container">
                     <fieldset>
                         <legend>Login Details</legend>
@@ -80,6 +80,7 @@
                             required
                             placeholder="name@example.com"
                         >
+                        <span class="error-msg" id="email-error"></span>
 
                         <label for="password">Password</label>
                         <input
@@ -91,6 +92,7 @@
                             minlength="6"
                             placeholder="At least 6 characters"
                         >
+                        <span class="error-msg" id="password-error"></span>
 
                         <div class="checkbox-group">
                             <input type="checkbox" id="remember" name="remember">
@@ -125,5 +127,8 @@
         <p>© 2026 PTKM. All rights reserved.</p>
         <p>Icons and images from free online resources.</p>
     </footer>
+
+    <!-- Java script code for form validation-->
+    <script src="js/validation.js"></script>
 </body>
 </html>

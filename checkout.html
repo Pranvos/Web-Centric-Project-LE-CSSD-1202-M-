@@ -62,21 +62,25 @@
     </nav>
     
     <main class="checkout">
-        <form action="#" method="post">
+        <form action="#" method="post" novalidate>
             <div class="checkout-form">
                 <fieldset>
                     <legend>Shipping Information</legend>
-                    <label for="name">Full Name:</label>
+                    <label for="name">Full Name</label>
                     <input type="text" pattern="[a-zA-Z ]{2,}" id="name" name="name" placeholder="John Doe" required>
-
-                    <label for="address">Address:</label>
+                    <span class="error-msg" id="name-error"></span>
+                    
+                    <label for="address">Address</label>
                     <input type="text" pattern="[0-9a-zA-Z ]{2,}" id="address" name="address" placeholder="123 Main Street" required>
+                    <span class="error-msg" id="address-error"></span>
 
-                    <label for="city">City:</label>
+                    <label for="city">City</label>
                     <input type="text" pattern="[A-Za-z ]{2,}" id="city" name="city" placeholder="City Name" required>
+                    <span class="error-msg" id="city-error"></span>
 
-                    <label for="zip">ZIP Code:</label>
-                    <input type="text" pattern="[A-Za-z0-9 ]{6}" id="zip" name="zip" placeholder="A1A 1A1" required>
+                    <label for="zip">ZIP Code</label>
+                    <input type="text" pattern="[A-Za-z0-9 ]{6}" id="zip" name="zip" placeholder="A1A1A1" required>
+                    <span class="error-msg" id="zip-error"></span>
                 </fieldset>
 
                 <fieldset>
@@ -89,14 +93,17 @@
                         <label for="mastercard"><img src="images/mastercard-icon.png" alt="MasterCard" height="40"></label>
                     </div>
 
-                    <label for="cardnumber">Card Number:</label>
+                    <label for="cardnumber">Card Number</label>
                     <input type="text" pattern="[0-9]{16}" id="cardnumber" name="cardnumber" placeholder="XXXX XXXX XXXX XXXX" required>
+                    <span class="error-msg" id="cardnumber-error"></span>
 
-                    <label for="expiry">Expiry Date:</label>
+                    <label for="expiry">Expiry Date</label>
                     <input type="text" pattern="[0-9]{2}/[0-9]{2}" id="expiry" name="expiry" placeholder="XX/XX" required>
+                    <span class="error-msg" id="expiry-error"></span>
 
-                    <label for="cvv">CVV:</label>
+                    <label for="cvv">CVV</label>
                     <input type="text" pattern="[0-9]{3}" id="cvv" name="cvv" placeholder="XXX" required>
+                    <span class="error-msg" id="cvv-error"></span>
                 </fieldset>
             </div>
             <div class="place-order">
@@ -115,5 +122,8 @@
         <p>© 2026 PTKM. All rights reserved.</p>
         <p>Icons and images from free online resources.</p>
     </footer>
+
+    <!-- Java script code for form validation-->
+    <script src="js/validation.js"></script>
 </body>
 </html>

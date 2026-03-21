@@ -66,19 +66,22 @@
             <h2 id="register-title">Create Account</h2>
             <p>Fill out the form to join the community.</p>
 
-            <form action="#" method="post">
+            <form action="#" method="post" novalidate>
                 <div class="form-container">
                     <fieldset>
                         <legend>Profile Information</legend>
 
                         <label for="fullname">Full Name</label>
                         <input type="text" id="fullname" name="fullname" autocomplete="name" required placeholder="First Last">
+                         <span class="error-msg" id="fullname-error"></span>
 
                         <label for="username">Username</label>
                         <input type="text" id="username" name="username" required minlength="3" maxlength="20" placeholder="3 to 20 characters">
+                        <span class="error-msg" id="username-error"></span>
 
                         <label for="phone">Phone (optional)</label>
                         <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="1234567890">
+                        <span class="error-msg" id="phone-error"></span>
                     </fieldset>
 
                     <fieldset>
@@ -86,10 +89,12 @@
 
                         <label for="email">Email</label>
                         <input type="email" id="email" name="email" autocomplete="email" required placeholder="name@example.com">
-
+                        <span class="error-msg" id="email-error"></span>
+                        
                         <label for="new-password">Password</label>
                         <input type="password" id="new-password" name="new-password" autocomplete="new-password" required minlength="6" placeholder="At least 6 characters">
-
+                        <span class="error-msg" id="password-error"></span>
+                        
                         <label for="account-type">Account Type</label>
                         <select id="account-type" name="account-type" required>
                             <option value="" selected disabled>Select one</option>
@@ -97,6 +102,7 @@
                             <option value="collector">Collector</option>
                             <option value="guest">Guest</option>
                         </select>
+                        <span class="error-msg" id="account-type-error"></span>
 
                         <label>Preferred Platform</label>
                         <div class="radio-group">
@@ -109,6 +115,7 @@
                         <div class="checkbox-group">
                             <input type="checkbox" id="terms" name="terms" required>
                             <label for="terms">I agree to the Terms</label>
+                            <span class="error-msg" id="terms-error"></span>
                         </div>
                     </fieldset>
                 </div>
@@ -137,5 +144,8 @@
         <p>© 2026 PTKM. All rights reserved.</p>
         <p>Icons and images from free online resources.</p>
     </footer>
+
+    <!-- Java script code for form validation-->
+    <script src="js/validation.js"></script>
 </body>
 </html>
