@@ -82,17 +82,6 @@ checkoutLinks.forEach(function(link) {
     });
 });
 
-// Form submission handler
-let form = document.querySelector('form');
-if (form) {
-    form.addEventListener('submit', function(event) {
-        let nameInput = document.getElementById('name');
-        if (nameInput && !nameInput.value.trim()) {
-            event.preventDefault();
-            showCustomAlert('Please provide a name before placing order');
-        }
-    });
-}
 
 // ==========================================
 // NEW CODE FOR PHASE 3, PART 4 REQUIREMENTS
@@ -100,11 +89,24 @@ if (form) {
 
 // PART 4a: setInterval and setTimeout - Flash Sale Timer
 function startFlashSale() {
-    let timeRemaining = 3600; // 1 hour in seconds
     const timerDisplay = document.getElementById('flash-sale-timer');
 
-    if (timerDisplay) {
+    if (!timerDisplay) return; 
+
+    const STORAGE_KEY = "flashSaleEnd"; 
+    let endTime = localStorage.getItem(STORAGE_KEY); 
+
+    //If no timer exists, set one
+    if(!endTime){
+        endTime = Date.now() + 3600 * 1000; //1 hour from now
+        localStorage.setItem(STORAGE_KEY, endTime); 
+    }
+    else{
+        endTime = parseInt(endTime); 
+    }
+
         const intervalId = setInterval(function() {
+            let timeRemaining = Math.floor((endTime - Date.now())/1000); 
             let minutes = Math.floor(timeRemaining / 60);
             let seconds = timeRemaining % 60;
 
@@ -125,7 +127,7 @@ function startFlashSale() {
             }
             timeRemaining--;
         }, 1000); // Runs every 1000 milliseconds (1 second) [cite: 48]
-    }
+    
 }
 
 // Start the timer when the page loads
