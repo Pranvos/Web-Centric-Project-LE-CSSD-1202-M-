@@ -93,4 +93,79 @@ if (form) {
         }
     });
 }
+
+// ==========================================
+// NEW CODE FOR PHASE 3, PART 4 REQUIREMENTS
+// ==========================================
+
+// PART 4a: setInterval and setTimeout - Flash Sale Timer
+function startFlashSale() {
+    let timeRemaining = 3600; // 1 hour in seconds
+    const timerDisplay = document.getElementById('flash-sale-timer');
+
+    if (timerDisplay) {
+        const intervalId = setInterval(function() {
+            let minutes = Math.floor(timeRemaining / 60);
+            let seconds = timeRemaining % 60;
+
+            // Add leading zero if less than 10
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+
+            timerDisplay.textContent = `🔥 Flash Sale ends in: ${minutes}:${seconds} 🔥`;
+
+            if (timeRemaining <= 0) {
+                clearInterval(intervalId); // Stop the interval
+                timerDisplay.textContent = "Flash Sale Ended!";
+                
+                // Use setTimeout to remove the message after 3 seconds
+                setTimeout(() => {
+                    timerDisplay.style.display = 'none';
+                }, 3000);
+            }
+            timeRemaining--;
+        }, 1000); // Runs every 1000 milliseconds (1 second) [cite: 48]
+    }
+}
+
+// Start the timer when the page loads
+startFlashSale();
+
+// PART 4b: window.scroll() - Back to Top Button
+const backToTopBtn = document.createElement('button');
+backToTopBtn.innerText = '↑ Top';
+backToTopBtn.id = 'backToTopBtn';
+backToTopBtn.style.position = 'fixed';
+backToTopBtn.style.bottom = '20px';
+backToTopBtn.style.right = '20px';
+backToTopBtn.style.display = 'none'; // Hidden by default
+backToTopBtn.style.zIndex = '1000';
+backToTopBtn.style.boxShadow = '0 4px 8px rgba(0,0,0,0.5)';
+backToTopBtn.style.backgroundColor = '#ff4d4d';
+backToTopBtn.style.color = '#ffffff';
+backToTopBtn.style.border = 'none';
+backToTopBtn.style.borderRadius = '5px';
+backToTopBtn.style.padding = '10px 15px';
+backToTopBtn.style.cursor = 'pointer';
+
+document.body.appendChild(backToTopBtn);
+
+// Show button when user scrolls down
+window.addEventListener('scroll', function() {
+    if (window.scrollY > 200) {
+        backToTopBtn.style.display = 'block';
+    } else {
+        backToTopBtn.style.display = 'none';
+    }
+});
+
+// Scroll back to top when clicked
+backToTopBtn.addEventListener('click', function() {
+    window.scroll({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+    }); // [cite: 49]
+});
+
 });
