@@ -56,18 +56,6 @@ addToCartButtons.forEach(function(button) {
         event.target.classList.remove('btn-scale');
     });
 
-    const backToTopBtn = document.createElement('button');
-    backToTopBtn.innerText = '↑ Top';
-    backToTopBtn.id = 'backToTopBtn'; // CSS handles all the styling
-    document.body.appendChild(backToTopBtn);
-
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 200) {
-            backToTopBtn.classList.add('visible');
-        } else {
-            backToTopBtn.classList.remove('visible');
-        }
-    });
 });
 
 
@@ -152,18 +140,6 @@ startFlashSale();
 const backToTopBtn = document.createElement('button');
 backToTopBtn.innerText = '↑ Top';
 backToTopBtn.id = 'backToTopBtn';
-backToTopBtn.style.position = 'fixed';
-backToTopBtn.style.bottom = '20px';
-backToTopBtn.style.right = '20px';
-backToTopBtn.style.display = 'none'; // Hidden by default
-backToTopBtn.style.zIndex = '1000';
-backToTopBtn.style.boxShadow = '0 4px 8px rgba(0,0,0,0.5)';
-backToTopBtn.style.backgroundColor = '#ff4d4d';
-backToTopBtn.style.color = '#ffffff';
-backToTopBtn.style.border = 'none';
-backToTopBtn.style.borderRadius = '5px';
-backToTopBtn.style.padding = '10px 15px';
-backToTopBtn.style.cursor = 'pointer';
 
 document.body.appendChild(backToTopBtn);
 
