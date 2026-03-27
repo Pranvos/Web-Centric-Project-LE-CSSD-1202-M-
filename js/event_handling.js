@@ -60,7 +60,7 @@ addToCartButtons.forEach(function(button) {
 // Hit 'C' on keyboard to view cart items count
 document.addEventListener('keydown', function(event) {
     if (event.key === 'c' || event.key === 'C') {
-        let itemsInCart = document.querySelectorAll('button[data-added="true"]').length;
+        let itemsInCart = Object.keys(localStorage).filter(key => ['re', 'rdr', 'cod', 'rs', 'er', 'hk'].includes(key)).map(key => JSON.parse(localStorage.getItem(key))).length;
         if (itemsInCart > 0) {
             showCustomAlert('Items in cart: ' + itemsInCart);
         } else {
@@ -74,7 +74,7 @@ document.addEventListener('keydown', function(event) {
 let checkoutLinks = document.querySelectorAll('a[href="checkout.html"]');
 checkoutLinks.forEach(function(link) {
     link.addEventListener('click', function(event) {
-        let itemsAdded = document.querySelectorAll('button[data-added="true"]');
+        let itemsAdded = Object.keys(localStorage).filter(key => ['re', 'rdr', 'cod', 'rs', 'er', 'hk'].includes(key)).map(key => JSON.parse(localStorage.getItem(key))).length;
         if (itemsAdded.length === 0) {
             event.preventDefault();
             showCustomAlert('Please add items to cart before checkout');
