@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
             div2.style.display = 'flex';
             div2.style.justifyContent = 'space-between';
             div2.style.gap = '20px';
-            itemDescription.innerHTML = `<strong>${item.name}</strong><br><br>${item.desciption}`;
+            itemDescription.innerHTML = `<strong>${item.name}</strong><br><br>${item.description}`;
             itemDescription.style.textAlign = 'left';
             itemPrice.innerText = `$${item.price.toFixed(2)}`;
             itemImage.src = item.image;

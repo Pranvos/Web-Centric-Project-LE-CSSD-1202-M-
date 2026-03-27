@@ -246,6 +246,7 @@ if (document.title.includes("Contact")) {
       const contactmethod = document.querySelector('input[name="contact_method"]:checked');
       if (!contactmethod){
         showError("contactmethod-error", "You must select a contact method."); 
+        valid = false;
       } else clearError("contactmethod-error"); 
 
       // Message

@@ -33,6 +33,7 @@ addToCartButtons.forEach(function(button) {
             btn.disabled = false;
             btn.style.cursor = 'pointer';
             btn.setAttribute('data-added', 'true');
+            btn.disabled = true; 
             
             showCustomAlert('Item added to cart now');
         } else if (btn.innerText.includes('Added to Cart')) {
