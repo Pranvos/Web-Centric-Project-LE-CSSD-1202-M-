@@ -1,7 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
 
+let popup = null; 
 // popup
 function showCustomAlert(message) {
+
+    //Remove the previous message if one is shown
+    if (popup) {
+        popup.remove();
+    }
     // alert box
     let alertBox = document.createElement('div');
     alertBox.className = 'custom-alert';
@@ -9,14 +15,29 @@ function showCustomAlert(message) {
     
     // Add to body
     document.body.appendChild(alertBox);
+
+    popup = alertBox; 
     
-    setTimeout(function() {alertBox.remove();}, 1500);
+    setTimeout(function() {alertBox.remove(); popup = null;}, 1500);
     
     // remove on click
     alertBox.addEventListener('click', function() {
         alertBox.remove();
+        popup = null; 
     });
 }
+
+// Checkout link handler
+let checkoutLinks = document.querySelectorAll('a[href="checkout.html"]');
+checkoutLinks.forEach(function(link) {
+    link.addEventListener('click', function(event) {
+        let itemsAdded = Object.keys(localStorage).filter(key => ['re', 'rdr', 'cod', 'rs', 'er', 'hk'].includes(key)).map(key => JSON.parse(localStorage.getItem(key))).length;
+        if (itemsAdded === 0) {
+            event.preventDefault();
+            showCustomAlert('Please add items to cart before checkout');
+        }
+    });
+});
 
 const addToCartButtons = document.querySelectorAll('button[type="button"]');
 

@@ -19,38 +19,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-// Checkout link handler
-let checkoutLinks = document.querySelectorAll('a[href="checkout.html"]');
-checkoutLinks.forEach(function(link) {
-    link.addEventListener('click', function(event) {
-        let itemsAdded = Object.keys(localStorage).filter(key => ['re', 'rdr', 'cod', 'rs', 'er', 'hk'].includes(key)).map(key => JSON.parse(localStorage.getItem(key))).length;
-        if (itemsAdded === 0) {
-            event.preventDefault();
-            showCustomAlert('Please add items to cart before checkout');
-        }
-    });
-});
-
-// popup
-function showCustomAlert(message) {
-    // alert box
-    let alertBox = document.createElement('div');
-    alertBox.className = 'custom-alert';
-    alertBox.innerText = message;
-    
-    // Add to body
-    document.body.appendChild(alertBox);
-    
-    setTimeout(function() {alertBox.remove();}, 1500);
-    
-    // remove on click
-    alertBox.addEventListener('click', function() {
-        alertBox.remove();
-    });
-}
-
-
-
     // Update the cart display
     let items = Object.keys(localStorage).filter(key => ['re', 'rdr', 'cod', 'rs', 'er', 'hk'].includes(key)).map(key => JSON.parse(localStorage.getItem(key)));
     let itemsInCart = Object.keys(localStorage).filter(key => ['re', 'rdr', 'cod', 'rs', 'er', 'hk'].includes(key)).length;
