@@ -96,17 +96,24 @@
                     <span class="error-msg" id="cardtype-error"></span>
 
                     <label for="cardnumber">Card Number</label>
-                    <input type="text" pattern="[0-9]{16}" id="cardnumber" name="cardnumber" placeholder="XXXX XXXX XXXX XXXX" required>
+                    <input type="text" pattern="[0-9]{16}" id="cardnumber" name="cardnumber" placeholder="XXXXXXXXXXXXXXXX" required>
                     <span class="error-msg" id="cardnumber-error"></span>
 
                     <label for="expiry">Expiry Date</label>
-                    <input type="text" pattern="[0-9]{2}/[0-9]{2}" id="expiry" name="expiry" placeholder="XX/XX" required>
+                    <input type="text" pattern="[0-9]{2}/[0-9]{2}" id="expiry" name="expiry" placeholder="MM/YY" required>
                     <span class="error-msg" id="expiry-error"></span>
 
                     <label for="cvv">CVV</label>
                     <input type="text" pattern="[0-9]{3}" id="cvv" name="cvv" placeholder="XXX" required>
                     <span class="error-msg" id="cvv-error"></span>
                 </fieldset>
+            </div>
+            <!-- Order Summary -->
+            <div class="order-summary" id="order-summary">
+                <h3>Order Summary</h3>
+                <div id="order-items-list"></div>
+                <hr>
+                <p id="order-total" style="font-weight:bold; font-size:1.1em;"></p>
             </div>
             <div class="place-order">
                 <button type="submit">Place Order</button>
@@ -129,5 +136,7 @@
     <script src="js/validation.js"></script>
     <!-- Java script code for event handling-->
     <script src="js/event_handling.js"></script>
+
+    <script src="js/cart_handling.js"></script>
 </body>
 </html>

@@ -165,9 +165,23 @@ if (document.title.includes("Checkout")) {
       // Expiry date
       const expiry = document.getElementById("expiry").value.trim();
       if (!expiryRegex.test(expiry)) {
-        showError("expiry-error", "Enter a valid expiry date (MM/YY).");
-        valid = false;
-      } else clearError("expiry-error");
+          showError("expiry-error", "Enter a valid expiry date (MM/YY).");
+          valid = false;
+      } else {
+          // Check the date is not in the past
+          const [month, year] = expiry.split('/');
+          const expiryDate = new Date(2000 + parseInt(year), parseInt(month) - 1, 1);
+          const today = new Date();
+          today.setDate(1); // Compare by month only
+          today.setHours(0, 0, 0, 0);
+
+          if (expiryDate < today) {
+              showError("expiry-error", "Card is expired.");
+              valid = false;
+          } else {
+              clearError("expiry-error");
+          }
+      }
 
       // cvv
       const cvv = document.getElementById("cvv").value.trim();
@@ -177,8 +191,8 @@ if (document.title.includes("Checkout")) {
       } else clearError("cvv-error");
 
       if (valid) {
-        alert("Order placed successfully! Thank you for shopping at PTKM Gaming.");
-        checkoutForm.reset();
+        ['re', 'rdr', 'cod', 'rs', 'er', 'hk'].forEach(key => localStorage.removeItem(key));
+        window.location.href = 'thankyou.html';
       }
     });
   }

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmed - PTKM Gaming</title>
+    <link href="css/styles.css" rel="stylesheet">
+    <style>
+        .thankyou-container {
+            text-align: center;
+            padding: 60px 20px;
+            max-width: 560px;
+            margin: 0 auto;
+        }
+        .thankyou-icon { font-size: 5rem; margin-bottom: 16px; }
+        .thankyou-container h2 { font-size: 2rem; color: #4CAF50; margin-bottom: 12px; }
+        .thankyou-container p { color: #ccc; font-size: 1.05rem; margin-bottom: 32px; }
+        .thankyou-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .thankyou-buttons a {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: transform 0.15s;
+        }
+        .thankyou-buttons a:hover { transform: scale(1.04); }
+        .btn-home { background-color: #ff4d4d; color: #fff; }
+        .btn-games { border: 2px solid #ff4d4d; color: #ff4d4d; background: transparent; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>PTKM Gaming</h1>
+        <p>Your order is on its way!</p>
+        <hr>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html"><img src="images/home.png" alt="Home icon" height="30"> Home</a></li>
+            <li><a href="contact.html"><img src="images/telephone.png" alt="Contact icon" height="30"> Contact Us</a></li>
+            <li><a href="about.html"><img src="images/about-us.png" alt="About us icon" height="30"> About Us</a></li>
+            <li><a href="login.html"><img src="images/profileIcon.png" alt="Profile icon" height="30"> Login</a></li>
+            <li><a href="cart.html"><img src="images/cart.png" alt="Cart icon" height="30"> Your Cart</a></li>
+            <li><a href="games.html"><img src="images/games-icon.png" alt="Games icon" height="30"> Games</a></li>
+        </ul>
+        <hr>
+    </nav>
+
+    <main>
+        <div class="thankyou-container">
+            <h2>Thank You for Your Order!</h2>
+            <p>Your purchase was placed successfully. Happy playing!</p>
+            <div class="thankyou-buttons">
+                <a href="index.html" class="btn-home">Return to Home</a>
+                <a href="games.html" class="btn-games">Browse More Games</a>
+            </div>
+        </div>
+    </main>
+
+    <hr>
+    <footer>
+        <div class="instagram">
+            <p>Follow our instagram!</p>
+            <a href="https://www.instagram.com/"><img src="images/insta.png" alt="Instagram logo" height="20"></a>
+        </div>
+        <p>© 2026 PTKM. All rights reserved.</p>
+        <p>Icons and images from free online resources.</p>
+    </footer>
+
+    <script src="js/event_handling.js"></script>
+</body>
+</html>

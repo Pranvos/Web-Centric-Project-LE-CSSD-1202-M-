@@ -85,9 +85,56 @@ document.addEventListener('DOMContentLoaded', function() {
         let totalPriceElement = document.createElement('p');
         totalPriceElement.style.fontWeight = 'bold';
         totalPriceElement.style.marginTop = '20px';
-        totalPriceElement.innerText = `Total (${itemsInCart} items): $${totalPrice.toFixed(2)}`;
+        totalPriceElement.innerText = `Subtotal (${itemsInCart} items): $${totalPrice.toFixed(2)}`;
         div.appendChild(totalPriceElement);
         
         mainElement.appendChild(hr2);
     }
+
+    // Render order summary on checkout page
+if (location.pathname.includes('checkout')) {
+    let cartItems = Object.keys(localStorage)
+        .filter(key => ['re', 'rdr', 'cod', 'rs', 'er', 'hk'].includes(key))
+        .map(key => JSON.parse(localStorage.getItem(key)));
+
+    let orderItemsList = document.getElementById('order-items-list');
+    let orderTotal = document.getElementById('order-total');
+
+    if (orderItemsList && orderTotal) {
+        if (cartItems.length === 0) {
+            orderItemsList.innerHTML = '<p style="color:#aaa;">No items in cart.</p>';
+            orderTotal.textContent = 'Total: $0.00';
+        } else {
+            cartItems.forEach(function(item) {
+                let row = document.createElement('div');
+                row.style.display = 'flex';
+                row.style.justifyContent = 'space-between';
+                row.style.padding = '4px 0';
+                row.innerHTML = '<span>' + item.name + '</span><span>$' + item.price.toFixed(2) + '</span>';
+                orderItemsList.appendChild(row);
+            });
+            let subtotal = cartItems.reduce(function(sum, item) { return sum + item.price; }, 0);
+            let taxRate = 0.13; 
+            let tax = subtotal * taxRate;
+            let grandTotal = subtotal + tax;
+
+            let subtotalRow = document.createElement('div');
+            subtotalRow.style.display = 'flex';
+            subtotalRow.style.justifyContent = 'space-between';
+            subtotalRow.style.padding = '4px 0';
+            subtotalRow.innerHTML = '<span>Subtotal</span><span>$' + subtotal.toFixed(2) + '</span>';
+            orderItemsList.appendChild(subtotalRow);
+
+            let taxRow = document.createElement('div');
+            taxRow.style.display = 'flex';
+            taxRow.style.justifyContent = 'space-between';
+            taxRow.style.padding = '4px 0';
+            taxRow.innerHTML = '<span>Tax (13% HST)</span><span>$' + tax.toFixed(2) + '</span>';
+            orderItemsList.appendChild(taxRow);
+
+            orderTotal.textContent = 'Total: $' + grandTotal.toFixed(2);
+        }
+    }
+}
 });
+
