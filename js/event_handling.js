@@ -72,17 +72,7 @@ document.addEventListener('keydown', function(event) {
     }
 });
 
-// Checkout link handler
-let checkoutLinks = document.querySelectorAll('a[href="checkout.html"]');
-checkoutLinks.forEach(function(link) {
-    link.addEventListener('click', function(event) {
-        let itemsAdded = Object.keys(localStorage).filter(key => ['re', 'rdr', 'cod', 'rs', 'er', 'hk'].includes(key)).map(key => JSON.parse(localStorage.getItem(key))).length;
-        if (itemsAdded.length === 0) {
-            event.preventDefault();
-            showCustomAlert('Please add items to cart before checkout');
-        }
-    });
-});
+
 
 
 // ==========================================
