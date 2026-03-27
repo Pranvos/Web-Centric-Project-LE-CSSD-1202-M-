@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
     const games = [
-        { id: 're', name: 'Resident Evil Biohazard', price: 19.99, image: 'images/resident-evil.png', desciption: 'Experience the ultimate survival horror.' },
-        { id: 'rdr', name: 'Red Dead Redemption 2', price: 14.99, image: 'images/red-dead-cover.png', desciption: 'An epic western adventure.' },
-        { id: 'cod', name: 'Call of Duty: Black Ops 7', price: 29.99, image: 'images/black-ops-cover.png', desciption: 'The latest installment in the Black Ops series.' },
-        { id: 'rs', name: 'Rock Simulator', price: 24.99, image: 'images/rock-simulator-cover.png', desciption: 'Experience the thrill of rock climbing.' },
-        { id: 'er', name: 'Elden Ring', price: 59.99, image: 'images/elder-ring-cover.png', desciption: 'A dark fantasy action RPG.' },
-        { id: 'hk', name: 'Hollow Knight', price: 14.99, image: 'images/hollow-knight-cover.png', desciption: 'A challenging metroidvania adventure.' }
+        { id: 're', name: 'Resident Evil Biohazard', price: 19.99, image: 'images/resident-evil.png', description: 'Experience the ultimate survival horror.' },
+        { id: 'rdr', name: 'Red Dead Redemption 2', price: 14.99, image: 'images/red-dead-cover.png', description: 'An epic western adventure.' },
+        { id: 'cod', name: 'Call of Duty: Black Ops 7', price: 29.99, image: 'images/black-ops-cover.png', description: 'The latest installment in the Black Ops series.' },
+        { id: 'rs', name: 'Rock Simulator', price: 24.99, image: 'images/rock-simulator-cover.png', description: 'Experience the thrill of rock climbing.' },
+        { id: 'er', name: 'Elden Ring', price: 59.99, image: 'images/elder-ring-cover.png', description: 'A dark fantasy action RPG.' },
+        { id: 'hk', name: 'Hollow Knight', price: 14.99, image: 'images/hollow-knight-cover.png', description: 'A challenging metroidvania adventure.' }
     ];
 
     const addToCartButtons = document.querySelectorAll('button[id^="re"], button[id^="rdr"], button[id^="cod"], button[id^="rs"], button[id^="er"], button[id^="hk"]');

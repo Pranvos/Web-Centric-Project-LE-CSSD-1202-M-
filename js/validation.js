@@ -57,6 +57,13 @@ if (document.title.includes("Register") && registerForm) {
       valid = false;
     } else clearError("password-error");
 
+    //Confirm password check
+    const confirmPassword = document.getElementById("confirm-password").value;
+    if (confirmPassword !== password) {
+      showError("confirm-password-error", "Passwords do not match.");
+      valid = false;
+    } else clearError("confirm-password-error");
+
     // Phone (validate if filled)
     const phone = document.getElementById("phone").value.trim();
     if (phone !== "" && !phoneRegex.test(phone)) {
@@ -153,6 +160,7 @@ if (document.title.includes("Checkout")) {
       const cardtype = document.querySelector('input[name="payment"]:checked');
       if(!cardtype){
         showError("cardtype-error", "You must select a card type"); 
+        valid = false;
       } else clearError("cardtype-error"); 
 
       // Card number

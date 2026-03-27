@@ -118,6 +118,7 @@ function startFlashSale() {
 
             if (timeRemaining <= 0) {
                 clearInterval(intervalId); // Stop the interval
+                localStorage.removeItem(STORAGE_KEY);
                 timerDisplay.textContent = "Flash Sale Ended!";
                 
                 // Use setTimeout to remove the message after 3 seconds
