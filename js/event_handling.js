@@ -48,12 +48,25 @@ addToCartButtons.forEach(function(button) {
     
     // Mouseover listener
     button.addEventListener('mouseover', function(event) {
-        event.target.style.transform = 'scale(1.05)';
+        event.target.classList.add('btn-scale');
     });
     
     // Mouseout listener
     button.addEventListener('mouseout', function(event) {
-        event.target.style.transform = 'scale(1)';
+        event.target.classList.remove('btn-scale');
+    });
+
+    const backToTopBtn = document.createElement('button');
+    backToTopBtn.innerText = '↑ Top';
+    backToTopBtn.id = 'backToTopBtn'; // CSS handles all the styling
+    document.body.appendChild(backToTopBtn);
+
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 200) {
+            backToTopBtn.classList.add('visible');
+        } else {
+            backToTopBtn.classList.remove('visible');
+        }
     });
 });
 

@@ -19,6 +19,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+
+
     // Update the cart display
     let items = Object.keys(localStorage).filter(key => ['re', 'rdr', 'cod', 'rs', 'er', 'hk'].includes(key)).map(key => JSON.parse(localStorage.getItem(key)));
     let itemsInCart = Object.keys(localStorage).filter(key => ['re', 'rdr', 'cod', 'rs', 'er', 'hk'].includes(key)).length;
@@ -37,24 +39,20 @@ document.addEventListener('DOMContentLoaded', function() {
             let itemImage = document.createElement('img');
             let removeButton = document.createElement('button');
 
-            div.style.display = 'flex';
-            div.style.flexDirection = 'column';
-            div.style.justifyContent = 'space-between';
-            div2.style.display = 'flex';
-            div2.style.justifyContent = 'space-between';
-            div2.style.gap = '20px';
+            div.classList.add('cart-item-info');
+            div2.classList.add('cart-item-outer');
+
             itemDescription.innerHTML = `<strong>${item.name}</strong><br><br>${item.description}`;
-            itemDescription.style.textAlign = 'left';
             itemPrice.innerText = `$${item.price.toFixed(2)}`;
             itemImage.src = item.image;
             itemImage.alt = `${item.name} Cover`;
-            itemImage.style.width = '30vw';
-            itemImage.style.maxWidth = '200px';
+            itemImage.style.width = '30vw';       // leave this one, it's a dynamic value
+            itemImage.style.maxWidth = '200px';   // leave this one, it's a dynamic value
             cartItem.classList.add('cart-item');
             removeButton.innerText = 'Remove';
             removeButton.addEventListener('click', function() {
-                localStorage.removeItem(item.id); 
-                location.reload(); 
+                localStorage.removeItem(item.id);
+                location.reload();
             });
 
             div2.appendChild(itemImage);
@@ -66,28 +64,25 @@ document.addEventListener('DOMContentLoaded', function() {
             cartSection.appendChild(cartItem);
         }
         let mainElement = document.getElementById('cartMain');
-        let div = document.createElement('div');
-        div.style.display = 'flex';
-        div.style.justifyContent = 'space-between';
-        div.style.margin = '4vw 8vw';
+        let summaryDiv = document.createElement('div');
+        summaryDiv.classList.add('cart-item-summary');
+
         mainElement.appendChild(hr);
-        mainElement.appendChild(div);
+        mainElement.appendChild(summaryDiv);
 
         let checkoutButton = document.createElement('button');
         checkoutButton.innerText = 'Proceed to Checkout';
-        checkoutButton.style.marginTop = '20px';
-        div.appendChild(checkoutButton);
+        summaryDiv.appendChild(checkoutButton);
         checkoutButton.addEventListener('click', function() {
             window.location.href = 'checkout.html';
         });
 
         let totalPrice = items.reduce((total, item) => total + item.price, 0);
         let totalPriceElement = document.createElement('p');
-        totalPriceElement.style.fontWeight = 'bold';
-        totalPriceElement.style.marginTop = '20px';
+        totalPriceElement.classList.add('cart-total');
         totalPriceElement.innerText = `Subtotal (${itemsInCart} items): $${totalPrice.toFixed(2)}`;
-        div.appendChild(totalPriceElement);
-        
+        summaryDiv.appendChild(totalPriceElement);
+
         mainElement.appendChild(hr2);
     }
 
@@ -107,9 +102,7 @@ if (location.pathname.includes('checkout')) {
         } else {
             cartItems.forEach(function(item) {
                 let row = document.createElement('div');
-                row.style.display = 'flex';
-                row.style.justifyContent = 'space-between';
-                row.style.padding = '4px 0';
+                row.classList.add('order-row');
                 row.innerHTML = '<span>' + item.name + '</span><span>$' + item.price.toFixed(2) + '</span>';
                 orderItemsList.appendChild(row);
             });
@@ -119,16 +112,12 @@ if (location.pathname.includes('checkout')) {
             let grandTotal = subtotal + tax;
 
             let subtotalRow = document.createElement('div');
-            subtotalRow.style.display = 'flex';
-            subtotalRow.style.justifyContent = 'space-between';
-            subtotalRow.style.padding = '4px 0';
+            subtotalRow.classList.add('order-row');
             subtotalRow.innerHTML = '<span>Subtotal</span><span>$' + subtotal.toFixed(2) + '</span>';
             orderItemsList.appendChild(subtotalRow);
 
             let taxRow = document.createElement('div');
-            taxRow.style.display = 'flex';
-            taxRow.style.justifyContent = 'space-between';
-            taxRow.style.padding = '4px 0';
+            taxRow.classList.add('order-row');
             taxRow.innerHTML = '<span>Tax (13% HST)</span><span>$' + tax.toFixed(2) + '</span>';
             orderItemsList.appendChild(taxRow);
 
@@ -136,5 +125,19 @@ if (location.pathname.includes('checkout')) {
         }
     }
 }
+
+            // Restore "Added to Cart" state for buttons already in localStorage
+            const gameIds = ['re', 'rdr', 'cod', 'rs', 'er', 'hk'];
+                gameIds.forEach(function(id) {
+                    if (localStorage.getItem(id)) {
+                        const btn = document.getElementById(id);
+                        if (btn) {
+                            btn.innerText = 'Added to Cart ✓';
+                            btn.classList.add('btn-added'); // ✅ CHANGED: was inline style
+                            btn.disabled = true;
+                            btn.setAttribute('data-added', 'true');
+                        }
+                    }
+                });
 });
 
