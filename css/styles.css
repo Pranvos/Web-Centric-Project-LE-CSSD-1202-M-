@@ -735,9 +735,12 @@ h2{font-size: 1.1rem;}
 }
 
 
-
-
-
+#promo-banner{
+    text-align:center; 
+    padding:10px; 
+    background:black; 
+    color:white;
+}
 
 
 .thankyou-container {
@@ -762,3 +765,5 @@ h2{font-size: 1.1rem;}
 .thankyou-buttons a:hover { transform: scale(1.04); }
 .btn-home { background-color: #ff4d4d; color: #fff; }
 .btn-games { border: 2px solid #ff4d4d; color: #ff4d4d; background: transparent; }
+
+

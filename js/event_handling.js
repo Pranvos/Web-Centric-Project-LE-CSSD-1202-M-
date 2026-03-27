@@ -161,4 +161,24 @@ backToTopBtn.addEventListener('click', function() {
     }); // [cite: 49]
 });
 
+
+const messages = [
+    "Free shipping on orders over $50!",
+    "Secure checkout guaranteed!",
+    "Rated #1 by our customers!"
+];
+
+let messageIndex = 0;
+
+function rotateMessages() {
+    const banner = document.getElementById("promo-banner");
+    if (!banner) return;
+
+    banner.textContent = messages[messageIndex];
+    messageIndex = (messageIndex + 1) % messages.length;
+}
+
+// Run every 3 seconds
+setInterval(rotateMessages, 3000);
+
 });

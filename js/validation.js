@@ -1,3 +1,35 @@
+function attachLiveValidation() {
+    const inputs = document.querySelectorAll("input");
+
+    inputs.forEach(input => {
+        input.addEventListener("input", () => {
+            validateField(input);
+        });
+    });
+}
+
+function validateField(input) {
+    let errorElement = document.getElementById(input.id + "-error");
+
+    if (!errorElement) return;
+
+    if (input.value.trim() === "") {
+        errorElement.textContent = "This field is required";
+        input.style.border = "2px solid red";
+    } else {
+        errorElement.textContent = "";
+        input.style.border = "2px solid green";
+    }
+
+    // Email validation
+    if (input.type === "email") {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(input.value)) {
+            errorElement.textContent = "Invalid email format";
+        }
+    }
+}
+
 // Show / clear error messages
 function showError(id, message) {
   const el = document.getElementById(id);
@@ -269,3 +301,4 @@ if (document.title.includes("Contact")) {
     });
   }
 }
+
